@@ -1,0 +1,26 @@
+{
+  "entities": {
+    "ProcessedFrame": {
+      "title": "Processed Frame",
+      "description": "A single frame of pose data useful for model training/reinforcement learning",
+      "type": "object",
+      "properties": {
+        "frameIndex": { "type": "integer" },
+        "timestamp": { "type": "number" },
+        "landmarks": { "type": "array" },
+        "angles": { "type": "object" },
+        "exerciseLabel": { "type": "string" },
+        "postureQuality": { "type": "string", "enum": ["good", "bad", "unknown"] },
+        "confidence": { "type": "number" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["frameIndex", "timestamp", "landmarks", "angles", "exerciseLabel", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/poses/{poseId}": {
+      "schema": "ProcessedFrame",
+      "description": "High-quality pose data for training datasets"
+    }
+  }
+}

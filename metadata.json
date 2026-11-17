@@ -1,0 +1,6 @@
+{
+  "name": "Pose2CSV",
+  "description": "AI preprocessing tool that converts exercise videos into machine-learning-ready datasets using MediaPipe pose estimation.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
